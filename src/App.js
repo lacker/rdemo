@@ -1,14 +1,31 @@
-import React from "react";
-import logo from "./logo.svg";
+import React, { useState } from "react";
 import "./App.css";
 
+function makeNumber() {
+  return Math.floor(Math.random() * 10);
+}
+
+function makeNumbers() {
+  return [makeNumber(), makeNumber()];
+}
+
 export default function App() {
+  let [[x, y], setNumbers] = useState(makeNumbers());
+
   return (
     <div className="App">
       <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>Hello</p>
-        <input type="submit" value="Submit" autofocus="true" />
+        <p>
+          {x} + {y}
+        </p>
+        <form
+          onSubmit={e => {
+            e.preventDefault();
+            setNumbers(makeNumbers());
+          }}
+        >
+          <input type="submit" value="Submit" autofocus="true" />
+        </form>
       </header>
     </div>
   );
