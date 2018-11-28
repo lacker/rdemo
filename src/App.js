@@ -24,7 +24,8 @@ export default function App() {
             setNumbers(makeNumbers());
           }}
         >
-          <input type="submit" value="Submit" autofocus="true" />
+          <input type="text" name="answer" autofocus="true" />
+          <input type="submit" value="Submit" />
         </form>
       </header>
     </div>
