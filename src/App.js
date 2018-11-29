@@ -11,6 +11,16 @@ function makeNumbers() {
 
 export default function App() {
   let [[x, y], setNumbers] = useState(makeNumbers());
+  let [message, setMessage] = useState("");
+
+  if (message !== "") {
+    setTimeout(() => setNumbers(makeNumbers()), 2000);
+    return (
+      <div className="App">
+        <header className="App-header">{message}</header>
+      </div>
+    );
+  }
 
   return (
     <div className="App">
@@ -21,7 +31,7 @@ export default function App() {
         <form
           onSubmit={e => {
             e.preventDefault();
-            setNumbers(makeNumbers());
+            setMessage("GOOD!");
           }}
         >
           <input type="text" name="answer" autofocus="true" />
