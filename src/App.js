@@ -14,7 +14,11 @@ export default function App() {
   let [message, setMessage] = useState("");
 
   if (message !== "") {
-    setTimeout(() => setNumbers(makeNumbers()), 2000);
+    setTimeout(() => {
+      setMessage("");
+      setNumbers(makeNumbers());
+    }, 2000);
+
     return (
       <div className="App">
         <header className="App-header">{message}</header>
@@ -34,7 +38,7 @@ export default function App() {
             setMessage("GOOD!");
           }}
         >
-          <input type="text" name="answer" autofocus="true" />
+          <input type="text" name="answer" autoFocus={true} />
           <input type="submit" value="Submit" />
         </form>
       </header>
