@@ -11,12 +11,14 @@ function makeNumbers() {
 
 export default function App() {
   let [[x, y], setNumbers] = useState(makeNumbers());
+  let [value, setValue] = useState("");
   let [message, setMessage] = useState("");
 
   if (message !== "") {
     setTimeout(() => {
       setMessage("");
       setNumbers(makeNumbers());
+      setValue("");
     }, 2000);
 
     return (
@@ -35,10 +37,23 @@ export default function App() {
         <form
           onSubmit={e => {
             e.preventDefault();
-            setMessage("GOOD!");
+            if (value === "" + (x + y)) {
+              setMessage("yes!");
+            } else {
+              setMessage("no!");
+            }
           }}
         >
-          <input type="text" name="answer" autoFocus={true} />
+          <input
+            value={value}
+            onChange={e => {
+              setValue(e.target.value);
+            }}
+            type="text"
+            name="answer"
+            autoFocus={true}
+            autocomplete="off"
+          />
           <input type="submit" value="Submit" />
         </form>
       </header>
