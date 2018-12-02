@@ -1,8 +1,10 @@
 import React, { useState } from "react";
 import "./App.css";
 
+let MAX = 100;
+
 function makeNumber() {
-  return Math.floor(Math.random() * 10);
+  return Math.floor(Math.random() * (MAX + 1));
 }
 
 function makeNumbers() {
@@ -31,6 +33,8 @@ export default function App() {
   return (
     <div className="App">
       <header className="App-header">
+        <h1>math yes no</h1>
+        <br />
         <p>
           {x} + {y}
         </p>
