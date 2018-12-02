@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import "./App.css";
 
-let MAX = 100;
+let MAX = 20;
 
 function makeNumber() {
   return Math.floor(Math.random() * (MAX + 1));
