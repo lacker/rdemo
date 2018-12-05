@@ -36,12 +36,12 @@ export default function App() {
         <h1>math yes no</h1>
         <br />
         <p>
-          {x} + {y}
+          {x} - {y}
         </p>
         <form
           onSubmit={e => {
             e.preventDefault();
-            if (value === "" + (x + y)) {
+            if (value === "" + (x - y)) {
               setMessage("yes!");
             } else {
               setMessage("no!");
