@@ -15,6 +15,7 @@ export default function App() {
   let [[x, y], setNumbers] = useState(makeNumbers());
   let [value, setValue] = useState("");
   let [message, setMessage] = useState("");
+  let [streak, setStreak] = useState(0);
 
   if (message !== "") {
     setTimeout(() => {
@@ -42,8 +43,10 @@ export default function App() {
           onSubmit={e => {
             e.preventDefault();
             if (value === "" + (x - y)) {
+              setStreak(streak + 1);
               setMessage("yes!");
             } else {
+              setStreak(0);
               setMessage("no!");
             }
           }}
