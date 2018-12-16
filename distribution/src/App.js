@@ -4,8 +4,24 @@ import "./App.css";
 let NUM = 2;
 let SIDES = 20;
 
-let MIN = NUM;
-let MAX = NUM * SIDES;
+function evaluate(list) {
+  let answer = 0;
+  for (let x of list) {
+    answer = answer + x;
+  }
+  return answer;
+}
+
+function repeat(x, n) {
+  let answer = [];
+  for (let i = 0; i < n; i++) {
+    answer.push(x);
+  }
+  return answer;
+}
+
+let MIN = evaluate(repeat(1, NUM));
+let MAX = evaluate(repeat(SIDES, NUM));
 
 function xline(num, count) {
   let str = "" + num;

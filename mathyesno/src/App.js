@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import "./App.css";
 
-let MAX = 20;
+let MAX = 40;
 
 function makeNumber() {
   return Math.floor(Math.random() * (MAX + 1));
@@ -37,12 +37,12 @@ export default function App() {
         <h1>math yes no</h1>
         <br />
         <p>
-          {x} - {y}
+          {x} + {y}
         </p>
         <form
           onSubmit={e => {
             e.preventDefault();
-            if (value === "" + (x - y)) {
+            if (value === "" + (x + y)) {
               setStreak(streak + 1);
               setMessage("yes!");
             } else {
