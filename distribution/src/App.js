@@ -59,17 +59,18 @@ function App() {
           style={{ height: "100px", width: "1000px", fontSize: 36 }}
           onClick={() => {
             let dice = [];
-            let sum = 0;
             for (let i = 0; i < NUM; i++) {
               let r = roll();
               dice.push(r);
-              sum += r;
             }
-            setMessage("you rolled " + dice.join(", ") + " which makes " + sum);
+            let result = evaluate(dice);
+            setMessage(
+              "you rolled " + dice.join(", ") + " which makes " + result
+            );
             let newDist = {
               ...dist
             };
-            newDist[sum] = (dist[sum] || 0) + 1;
+            newDist[result] = (dist[result] || 0) + 1;
             console.log(newDist);
             setDist(newDist);
           }}
