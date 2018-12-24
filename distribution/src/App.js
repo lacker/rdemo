@@ -42,7 +42,7 @@ function roll() {
 function App() {
   let [dist, setDist] = useState({});
   let [message, setMessage] = useState(
-    "you are rolling " + NUM + " dice with " + SIDES + " sides"
+    "hello! you are rolling " + NUM + " dice with " + SIDES + " sides"
   );
 
   let lines = [];
