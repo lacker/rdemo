@@ -11,6 +11,14 @@ function makeNumbers() {
   return [makeNumber(), makeNumber()];
 }
 
+function makeAddition() {
+  let [x, y] = makeNumbers();
+  return {
+    question: "" + x + " + " + y,
+    answer: x + y,
+  };
+}
+
 export default function App() {
   let [[x, y], setNumbers] = useState(makeNumbers());
   let [value, setValue] = useState("");
