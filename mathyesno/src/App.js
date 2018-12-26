@@ -19,6 +19,21 @@ function makeAddition() {
   };
 }
 
+function makeAdditionX() {
+  let [x, y] = makeNumbers();
+  let lhs;
+  if (Math.random() < 0.5) {
+    lhs = "x + " + y;
+  } else {
+    lhs = "" + y + " + x";
+  }
+    return {
+      question: lhs + " = " + (x + y),
+      answer: x,
+    }
+  }
+}
+
 export default function App() {
   let [[x, y], setNumbers] = useState(makeNumbers());
   let [value, setValue] = useState("");
