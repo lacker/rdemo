@@ -27,6 +27,21 @@ function makeMultiplication() {
   };
 }
 
+function makeMultiplicationX() {
+  let [x, y] = makeNumbers();
+  let lhs;
+  if (Math.random() < 0.5) {
+    lhs = "A x  " + y;
+  } else {
+    lhs = "" + y + " x A";
+  }
+    return {
+      question: lhs + " = " + (x * y),
+      answer: x,
+    }
+  }
+}
+
 function makeAdditionX() {
   let [x, y] = makeNumbers();
   let lhs;
