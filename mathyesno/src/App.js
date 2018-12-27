@@ -19,6 +19,14 @@ function makeAddition() {
   };
 }
 
+function makeMultiplication() {
+  let [x, y] = makeNumbers();
+  return {
+    question: "" + x + " x " + y,
+    answer: x * y,
+  };
+}
+
 function makeAdditionX() {
   let [x, y] = makeNumbers();
   let lhs;
