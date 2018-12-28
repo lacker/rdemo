@@ -15,7 +15,7 @@ function makeAddition() {
   let [x, y] = makeNumbers();
   return {
     question: "" + x + " + " + y,
-    answer: x + y,
+    answer: "" + x + y,
   };
 }
 
@@ -23,7 +23,7 @@ function makeMultiplication() {
   let [x, y] = makeNumbers();
   return {
     question: "" + x + " x " + y,
-    answer: x * y,
+    answer: "" + x * y,
   };
 }
 
@@ -37,7 +37,7 @@ function makeMultiplicationX() {
   }
     return {
       question: lhs + " = " + (x * y),
-      answer: x,
+      answer: "" + x,
     }
   }
 }
@@ -52,7 +52,7 @@ function makeAdditionX() {
   }
     return {
       question: lhs + " = " + (x + y),
-      answer: x,
+      answer: "" + x,
     }
   }
 }
