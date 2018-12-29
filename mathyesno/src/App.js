@@ -57,8 +57,12 @@ function makeAdditionX() {
   }
 }
 
+function makePuzzle() {
+  return makeAdditionX(); 
+}
+
 export default function App() {
-  let [[x, y], setNumbers] = useState(makeNumbers());
+  let [puzzle, setPuzzle] = useState(makePuzzle());
   let [value, setValue] = useState("");
   let [message, setMessage] = useState("");
   let [streak, setStreak] = useState(0);
@@ -66,7 +70,7 @@ export default function App() {
   if (message !== "") {
     setTimeout(() => {
       setMessage("");
-      setNumbers(makeNumbers());
+      setPuzzle(makePuzzle());
       setValue("");
     }, 2000);
 
@@ -83,12 +87,12 @@ export default function App() {
         <h1>math yes no</h1>
         <br />
         <p>
-          {x} + {y}
+          {puzzle.question}
         </p>
         <form
           onSubmit={e => {
             e.preventDefault();
-            if (value === "" + (x + y)) {
+            if (value === puzzle.answer) {
               setStreak(streak + 1);
               setMessage("yes!");
             } else {
