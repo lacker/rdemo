@@ -58,7 +58,14 @@ function makeAdditionX() {
 }
 
 function makePuzzle() {
-  return makeAdditionX(); 
+  let list = [
+    makeAddition,
+    makeMultiplication,
+    makeAdditionX,
+    makeMultiplicationX,
+    ];
+  let index = Math.floor(Math.random() * list.length) + 1;
+  return list[index](); 
 }
 
 export default function App() {
