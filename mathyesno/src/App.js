@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import "./App.css";
 
-let MAX = 40;
+let MAX = 20;
 
 function makeNumber() {
   return Math.floor(Math.random() * (MAX + 1));
@@ -54,6 +54,17 @@ function makeAdditionX() {
       question: lhs + " = " + (x + y),
       answer: "" + x,
     }
+  }
+}
+
+function makeSequence() {
+  let [x, y] = makeNumbers();
+  let x2 = x + y;
+  let x3 = x + 2 * y;
+  let x4 = x + 3 * y;
+  return {
+    question: "" + x + ", " + x2 + ", " + x3 + ", __",
+    answer: x4,
   }
 }
 
