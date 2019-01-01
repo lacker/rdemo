@@ -74,6 +74,7 @@ function makePuzzle() {
     makeMultiplication,
     makeAdditionX,
     makeMultiplicationX,
+    makeSequence,
     ];
   let index = Math.floor(Math.random() * list.length) + 1;
   return list[index](); 
