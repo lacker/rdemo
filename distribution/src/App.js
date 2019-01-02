@@ -4,6 +4,11 @@ import "./App.css";
 let NUM = 2;
 let SIDES = 20;
 
+let op = {
+  char: "+",
+  f: (x, y) => x + y,
+};
+
 function evaluate(list) {
   let answer = 0;
   for (let x of list) {
