@@ -4,9 +4,14 @@ import "./App.css";
 let NUM = 2;
 let SIDES = 20;
 
-let op = {
+let add = {
   char: "+",
   f: (x, y) => x + y,
+};
+
+let mult = {
+  char: "x",
+  f: (x, y) => x * y,
 };
 
 function evaluate(list) {
