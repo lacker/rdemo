@@ -7,11 +7,13 @@ let SIDES = 20;
 let add = {
   char: "+",
   f: (x, y) => x + y,
+  base: 0,
 };
 
 let mult = {
   char: "x",
   f: (x, y) => x * y,
+  base: 1,
 };
 
 function evaluate(list) {
