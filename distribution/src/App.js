@@ -16,10 +16,12 @@ let mult = {
   base: 1,
 };
 
+let OP = add;
+
 function evaluate(list) {
-  let answer = 0;
+  let answer = OP.base;
   for (let x of list) {
-    answer = answer + x;
+    answer = OP.f(answer, x);
   }
   return answer;
 }
