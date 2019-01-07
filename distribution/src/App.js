@@ -79,7 +79,7 @@ function App() {
             }
             let result = evaluate(dice);
             setMessage(
-              "you rolled " + dice.join(", ") + " which makes " + result
+              "you rolled " + dice.join(" " + OP.char + " ") + " = " + result
             );
             let newDist = {
               ...dist
