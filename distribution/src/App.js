@@ -10,6 +10,17 @@ let add = {
   base: 0,
 };
 
+let sub = {
+  char: "-",
+  f: (x, y) => {
+    if (x === "nothing") {
+      return y; 
+    }
+    return x - y;
+  },
+  base: "nothing"
+};
+
 let mult = {
   char: "x",
   f: (x, y) => x * y,
