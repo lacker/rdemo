@@ -4,6 +4,11 @@ import "./App.css";
 let NUM = 2;
 let SIDES = 20;
 
+function choice(list) {
+  let index = Math.floor(Math.random() * list.length) + 1;
+  return list[index];
+}
+
 let add = {
   char: "+",
   f: (x, y) => x + y,
